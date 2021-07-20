@@ -1,0 +1,17 @@
+<h1>Authors Page</h1>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+  	<tr>
+      <th>Name</th>
+	</tr>
+	</thead>
+	<tbody class="jsauthorList">
+		<%= render partial: '', collection: @kids, as: :kid %>
+		<%unless @kids.present? %>
+			<tr>
+			  <td colspan='7' class="text-center">No record found</td>
+			</tr>
+		<% end%>
+	</tbody>
+</table>
