@@ -6,12 +6,11 @@
       <th>Name</th>
 	</tr>
 	</thead>
-	<tbody class="jsauthorList">
-		<%= render partial: '', collection: @kids, as: :kid %>
-		<%unless @kids.present? %>
-			<tr>
-			  <td colspan='7' class="text-center">No record found</td>
-			</tr>
-		<% end%>
+	<tbody class="jsAuthorList">
+		<%= render partial: 'list', collection: @authors, as: :author %>
 	</tbody>
 </table>
+<div class= "new-form"></div>
+<div id="newAuthorLink">
+	<%= link_to 'New Author', new_author_path, remote: true %> 
+</div>

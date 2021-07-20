@@ -1,0 +1,3 @@
+$('#newAuthorLink').show()
+$('.new-form').html("")
+$('.jsAuthorList').append("<%= j render partial: 'authors/list', locals: {author: @author}%> ")

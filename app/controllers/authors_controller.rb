@@ -13,4 +13,9 @@ class AuthorsController < ApplicationController
 		@author.save
 	end
 
+	private
+	def authors_params
+		params.require(:author).permit(:name)
+	end
+
 end
