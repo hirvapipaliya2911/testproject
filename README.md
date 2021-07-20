@@ -1,6 +1,6 @@
 # README
 
-Setup SignUP/login/logout with devise gem
-Add Authour and js through controller request
-Add bootstrap for view
-Add blog model 
+1)Setup SignUP/login/logout with devise gem
+2)Add Authour and js through controller request
+3)Add bootstrap for view
+4)Add blog model 
