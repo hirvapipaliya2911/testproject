@@ -1,0 +1,3 @@
+$('#newBlogLink').show()
+$('.new-form').html("")
+$('.jsBlogList').append("<%= j render partial: 'blogs/list', locals: {blog: @blog}%> ")

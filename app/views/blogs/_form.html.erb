@@ -1,0 +1,27 @@
+<section class="py-2">
+  <div class="container">
+    <%= simple_form_for @blog,url: blogs_path, remote: true  do |f| %>
+      <div class="col-sm-10">
+        <%= f.input :title %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.input :content %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.association :author, collection: Author.order(:name)%>
+      </div>
+      
+      
+
+      <%= f.fields_for :pictures do |b| %>
+        <div>
+          <%= b.file_field :image %>
+        </div>
+      <% end %>
+      
+      <div class="col-sm-10">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
+</section>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_20_071621) do
+ActiveRecord::Schema.define(version: 2021_07_20_135714) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,25 @@ ActiveRecord::Schema.define(version: 2021_07_20_071621) do
     t.datetime "updated_at", null: false
     t.integer "author_id"
     t.index ["author_id"], name: "index_blogs_on_author_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "blog_id"
+    t.index ["blog_id"], name: "index_comments_on_blog_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "imagable_type"
+    t.integer "imagable_id"
+    t.index ["imagable_type", "imagable_id"], name: "index_pictures_on_imagable_type_and_imagable_id"
   end
 
   create_table "users", force: :cascade do |t|
