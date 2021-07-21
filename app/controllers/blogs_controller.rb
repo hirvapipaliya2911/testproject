@@ -6,7 +6,6 @@ class BlogsController < ApplicationController
 
 	def new
 		@blog= Blog.new
-		@blog.comments.build
 		@blog.pictures.build
 	end
 
@@ -15,9 +14,15 @@ class BlogsController < ApplicationController
 		@blog.save!
 	end
 
+	def show
+		@blog = Blog.find(params[:id])
+	end
+
+	
+
 	private
 	
 	def blogs_params
-		params.require(:blog).permit(:title,:content,:author_id,comments_attributes: [:content,:id],pictures_attributes: [:image])
+		params.require(:blog).permit(:title,:content,:author_id,pictures_attributes: [:image])
 	end
 end

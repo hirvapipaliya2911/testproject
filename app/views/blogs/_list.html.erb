@@ -1,4 +1,6 @@
 <tr>
 <td><%= blog.title %></td>
 <td><%= blog.content %></td>
+<%#= blog.pictures.pluck(:image).join(',') %>
+<td><%= link_to 'show',blog %></td>
 </tr>

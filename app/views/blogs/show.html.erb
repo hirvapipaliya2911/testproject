@@ -1,0 +1,12 @@
+<div>
+  <%= @blog.content %>
+</div>
+<br>
+<div>
+  <h4>Comments</h4>
+  <%= render @blog.comments %>
+</div>
+<div>
+  <h4>Leave a reply</h4>
+  <%= render 'comments/form' %>
+</div>
