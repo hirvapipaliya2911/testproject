@@ -1,12 +1,20 @@
-<div>
-  <%= @blog.content %>
-</div>
-<br>
-<div>
-  <h4>Comments</h4>
-  <%= render @blog.comments %>
-</div>
-<div>
-  <h4>Leave a reply</h4>
-  <%= render 'comments/form' %>
+<div class="container-fluid">
+  <h3>Content</h3>
+  <div class="card">
+    <div class="card-body">
+      <%= @blog.content %>
+    </div>
+  </div>
+  <h3>Comments</h3>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <%= render @blog.comments %>
+    </div>
+  </div>
+  <h3>Leave a reply</h3>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <%= render 'comments/form' %>
+    </div>
+  </div>
 </div>

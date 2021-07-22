@@ -1,16 +1,11 @@
-<h1>Authors Page</h1>
-
-<table class="table table-striped table-hover table-bordered">
-  <thead>
-  	<tr>
-      <th>Name</th>
-	</tr>
-	</thead>
-	<tbody class="jsAuthorList">
+<div class="container-fluid">
+	<h3 class="text-center">AUTHOR PAGE</h3>
+	<div class="jsAuthorList">
 		<%= render partial: 'list', collection: @authors, as: :author %>
-	</tbody>
-</table>
-<div class= "new-form"></div>
-<div id="newAuthorLink">
-	<%= link_to 'New Author', new_author_path, remote: true %> 
+	</div>
+	<br>
+	<div class= "new-form"></div>
+	<div id="newAuthorLink">
+		<%= link_to 'New Author', new_author_path, remote: true, class:'btn btn-primary' %> 
+	</div>
 </div>

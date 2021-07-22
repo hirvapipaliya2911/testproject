@@ -1,6 +1,8 @@
-<tr>
-<td><%= blog.title %></td>
-<td><%= blog.content %></td>
-<%#= blog.pictures.pluck(:image).join(',') %>
-<td><%= link_to 'show',blog %></td>
-</tr>
+<div class="card">
+	<div class="card-body">
+		<h3><%= blog.title %></h3>
+		<p><%= blog.content %></p>
+			<%#= blog.pictures.pluck(:image).join(',') %>
+		<%= link_to 'Show',blog, class: 'btn btn-primary'%>
+	</div>
+</div>

@@ -1,20 +1,13 @@
-<h1>Blog Page</h1>
-<table class="table table-striped table-hover table-bordered">
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Content</th>
-			<!-- <th>Image</th> -->
-			<th>Action</th>
-		</tr>
-	</thead>
-	<tbody>
+<div class="container-fluid">
+	<h3 class="text-center">BLOG PAGE</h3>
+	<div class="container-fluid">
 		<div class="jsBlogList">
 			<%= render partial: 'list', collection: @blogs, as: :blog %>
 		</div>
-	</tbody>
-</table>
-<div id= "newBlogLink">
-	<%= link_to 'Add Blog', new_blog_path, remote:true %>
+		<br>
+		<div id= "newBlogLink">
+			<%= link_to 'Add Blog', new_blog_path, remote:true, class:'btn btn-primary'%>
+		</div>
+	</div>
+	<div class= "new-form"></div>
 </div>
-<div class= "new-form"></div>
