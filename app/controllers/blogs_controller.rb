@@ -18,6 +18,10 @@ class BlogsController < ApplicationController
 		@blog = Blog.find(params[:id])
 	end
 
+	def destroy
+		@blog = Blog.find(params[:id])
+		@blog.destroy
+	end
 	
 
 	private

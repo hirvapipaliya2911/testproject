@@ -4,5 +4,6 @@
 		<p><%= blog.content %></p>
 			<%#= blog.pictures.pluck(:image).join(',') %>
 		<%= link_to 'Show',blog, class: 'btn btn-primary'%>
+		<%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class:'btn btn-primary'%>
 	</div>
 </div>
