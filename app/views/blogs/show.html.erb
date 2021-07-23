@@ -1,8 +1,9 @@
 <div class="container-fluid">
   <h3>Content</h3>
-  <div class="card">
+  <div class="card" style="width: 25rem;">
     <div class="card-body">
-      <%= @blog.content %>
+      <p><%= image_tag @blog.pictures.pluck(:image).join(','),class:"card-img-top",style:"width:20rem"%></p>
+      <p><%= @blog.content %></p>
     </div>
   </div>
   <h3>Comments</h3>
