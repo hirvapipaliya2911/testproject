@@ -11,7 +11,11 @@ class BlogsController < ApplicationController
 
 	def create
 		@blog =Blog.new(blogs_params)
-		@blog.save!
+		if @blog.save
+			params[:pictures_attributes]['image'].each do |img|
+				@blog.pictures.create(image: img)
+			end
+		end
 	end
 
 	def show
@@ -27,6 +31,6 @@ class BlogsController < ApplicationController
 	private
 	
 	def blogs_params
-		params.require(:blog).permit(:title,:content,:author_id,pictures_attributes: [:image])
+		params.require(:blog).permit(:title, :content, :author_id)
 	end
 end

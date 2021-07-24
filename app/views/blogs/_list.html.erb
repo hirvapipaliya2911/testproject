@@ -1,9 +1,32 @@
-<div class="card">
-	<div class="card-body">
-		<h3><%= blog.title %></h3>
-		<p><%= image_tag blog.pictures.pluck(:image).join(','),class:"card-img-top" %></p>
-		<p><%= blog.content %></p>
-		<%= link_to 'Show',blog, class: 'btn btn-primary'%>
-		<%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class:'btn btn-primary'%>
-	</div>
+<div class="container">
+  <div class="well">
+    <div class="media">
+      <% blog.pictures.each do |img|  %>
+        <%= image_tag img.image_url, style: 'height:15rem;width:20rem;', class:'pull-left' %>
+      <% end %>
+      <div class="media-body">
+        <h2 class="media-heading"><%= blog.title %></h2>
+          <p class="text-right"><%= blog.author.name %></p>
+          <p><h5><%= blog.content %></h5></p>
+          <ul class="list-inline list-unstyled">
+            <li>
+              <span>
+                <%= link_to 'Show',blog, class: 'btn btn-primary'%>
+              </span>
+            </li>
+            <li>|</li>
+            <li>
+              <span>
+                <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class:'btn btn-primary'%>        
+              </span>
+              <li>|</li>
+              <li>
+                <span><i class="glyphicon glyphicon-comment"></i> <%= blog.comments.count%> comments</span>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </div>
 </div>
+
+

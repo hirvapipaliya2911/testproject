@@ -4,10 +4,9 @@
 		<div class="jsBlogList">
 			<%= render partial: 'list', collection: @blogs, as: :blog %>
 		</div>
-		<br>
 		<div id= "newBlogLink">
 			<%= link_to 'Add Blog', new_blog_path, remote:true, class:'btn btn-primary'%>
 		</div>
+		<div class= "new-form"></div>
 	</div>
-	<div class= "new-form"></div>
 </div>

@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-default from: 'hirva.essence@gmail.com'
+  default from: 'hirva.essence@gmail.com'
   layout 'mailer'
 
   def daily_report(email)

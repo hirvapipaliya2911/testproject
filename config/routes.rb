@@ -3,11 +3,9 @@ Rails.application.routes.draw do
         sessions: 'users/sessions',
         registrations: 'users/registrations'
       }
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-    root 'dashboards#dashboard'
-    resources :authors, only: %i[index new create destroy]
-    resources :blogs, only: %i[index new create show destroy] do
-      resources :comments
-    end
+  root 'dashboards#dashboard'
+  resources :authors, only: %i[index new create destroy]
+  resources :blogs, only: %i[index new create show destroy] do
+    resources :comments
+  end
 end

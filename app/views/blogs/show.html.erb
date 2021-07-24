@@ -1,19 +1,23 @@
 <div class="container-fluid">
-  <h3>Content</h3>
-  <div class="card" style="width: 25rem;">
-    <div class="card-body">
-      <p><%= image_tag @blog.pictures.pluck(:image).join(','),class:"card-img-top",style:"width:20rem"%></p>
-      <p><%= @blog.content %></p>
+  <h3><%=@blog.title%></h3>
+  <div class="card" style="width: auto;" >
+    <div class="card-body" style="height: 30%;">
+      <% @blog.pictures.each do |img|  %>
+        <%= image_tag img.image_url, style: 'height:15rem;width:auto;',class:'pull-left' %>
+      <% end %>
+      <div class="media-body">
+        <p><h5><%= @blog.content%></h5></p>
+      </div>
     </div>
   </div>
   <h3>Comments</h3>
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 21rem;">
     <div class="card-body">
       <%= render @blog.comments %>
     </div>
   </div>
   <h3>Leave a reply</h3>
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 21rem;">
     <div class="card-body">
       <%= render 'comments/form' %>
     </div>

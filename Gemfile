@@ -23,12 +23,17 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
-gem 'simple_form'
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'whenever'
+gem 'simple_form'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
+
+
+
 
 
 
