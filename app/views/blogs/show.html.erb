@@ -2,11 +2,13 @@
   <h3><%=@blog.title%></h3>
   <div class="card" style="width: auto;" >
     <div class="card-body" style="height: 30%;">
-      <% @blog.pictures.each do |img|  %>
-        <%= image_tag img.image_url, style: 'height:15rem;width:auto;',class:'pull-left' %>
-      <% end %>
-      <div class="media-body">
-        <p><h5><%= @blog.content%></h5></p>
+      <div>
+        <% @blog.pictures.each do |img|  %>
+          <%= image_tag img.image_url, style: 'height:15rem;width:auto;',class:'pull-left' %>
+        <% end %>
+      </div>
+      <div>
+        <p><h5><%= @blog.content.html_safe%></h5></p>
       </div>
     </div>
   </div>
@@ -22,4 +24,6 @@
       <%= render 'comments/form' %>
     </div>
   </div>
-</div>
+  <br>
+  <%= link_to 'Back',blogs_path, class:'btn btn-primary'%> 
+</div>  

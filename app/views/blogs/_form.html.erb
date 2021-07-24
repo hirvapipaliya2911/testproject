@@ -8,13 +8,14 @@
         </button>
       </div>
       <div class="modal-body">
+       
         <%= simple_form_for @blog,url: blogs_path,html: {multipart: :true}, remote: true  do |f| %>
           <div class="form-group">
             <%= f.input :title, required: true, input_html: { class: "form-control"}, input_label: {class: "form-control"} %>
           </div>
           <br>
           <div class="form-group">
-            <%= f.input :content, required: true, input_html: { class: "form-control"}, input_label: {class: "form-control"}   %>
+            <%= f.input :content, as: :trix_editor, required: true, input_html: {class: "form-control" }, input_label: {class: "form-control"}   %>
           </div>
           <br>
           <div class="form-group">

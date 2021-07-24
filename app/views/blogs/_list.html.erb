@@ -7,7 +7,7 @@
       <div class="media-body">
         <h2 class="media-heading"><%= blog.title %></h2>
           <p class="text-right"><%= blog.author.name %></p>
-          <p><h5><%= blog.content %></h5></p>
+          <p><h5><%= blog.content.html_safe %></h5></p>
           <ul class="list-inline list-unstyled">
             <li>
               <span>
