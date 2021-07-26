@@ -1,0 +1,49 @@
+<div id="EditModal" class="modal " role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
+
+          <div class="form-group">
+            <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+            <%= f.password_field :password, autocomplete: "new-password" %>
+            <% if @minimum_password_length %>
+              <br />
+              <em><%= @minimum_password_length %> characters minimum</em>
+            <% end %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+            <%= f.password_field :current_password, autocomplete: "current-password" %>
+          </div>
+         
+          <%= f.fields_for :picture, resource.build_picture do |b| %>
+            <div class="form-group">
+              <%= b.file_field :image %>
+            </div>
+          <% end %>
+
+          <div class="modal-footer">
+            <%= f.submit "Update", class: 'btn btn-primary' %>
+            <!-- <h3>Cancel my account</h3>
+            <p>Unhappy? <%#= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->
+            <%= link_to "Back", :back, class:'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

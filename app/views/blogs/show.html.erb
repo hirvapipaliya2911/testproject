@@ -1,15 +1,20 @@
 <div class="container-fluid">
   <h3><%=@blog.title%></h3>
-  <div class="card" style="width: auto;" >
-    <div class="card-body" style="height: 30%;">
-      <div>
-        <% @blog.pictures.each do |img|  %>
-          <%= image_tag img.image_url, style: 'height:15rem;width:auto;',class:'pull-left' %>
-        <% end %>
+  
+  <div class="slideshow-container">
+    <% @blog.pictures.each do |img|  %>
+      <div class="mySlides">
+        <%= image_tag img.image_url,style:'width:100%'%>
       </div>
-      <div>
-        <p><h5><%= @blog.content.html_safe%></h5></p>
-      </div>
+    <% end %>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  
+  <br>
+  <div class="card">
+    <div class="card-body">
+      <h5><%= @blog.content.html_safe%></h5>
     </div>
   </div>
   <h3>Comments</h3>

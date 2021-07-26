@@ -10,16 +10,17 @@
       <div class="modal-body">
        
         <%= simple_form_for @blog,url: blogs_path,html: {multipart: :true}, remote: true  do |f| %>
+        <%= f.error_notification %>
           <div class="form-group">
-            <%= f.input :title, required: true, input_html: { class: "form-control"}, input_label: {class: "form-control"} %>
+            <%= f.input :title, input_html: { class: "form-control", required: true}, input_label: {class: "form-control"} %>
           </div>
           <br>
           <div class="form-group">
-            <%= f.input :content, as: :trix_editor, required: true, input_html: {class: "form-control" }, input_label: {class: "form-control"}   %>
+            <%= f.input :content, as: :trix_editor, input_html: {class: "form-control"}, input_label: {class: "form-control"}   %>
           </div>
           <br>
           <div class="form-group">
-            <%= f.association :author, collection: Author.order(:name),required: true, input_html: { class: "form-control"}, input_label: {class: "form-control"}   %>
+            <%= f.association :author, collection: Author.order(:name), input_html: { class: "form-control", required: true}, input_label: {class: "form-control"}   %>
           </div>
           <br>
           <%= f.fields_for :pictures do |b| %>
