@@ -12,6 +12,8 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require jquery-ui
+//= require jquery-ui/widgets/autocomplete
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require bootstrap
@@ -19,3 +21,22 @@
 //= require turbolinks
 //= require trix
 //= require_tree .
+
+function initSuggestion() {
+  $(".auto-suggestion").autocomplete({
+    source: function (request, response) {
+      $.ajax({
+        url: '/blogs/autocomplete_blog_title',
+        method: 'GET',
+        type: 'json',
+        data: {term: request.term},
+        success: function (data) {
+          $('.ui-autocomplete').appendTo('#searchComplete')
+          response(data);
+        },
+        error: function (data) { console.log(data, 'Error!'); }
+      })
+    }
+
+  });
+}

@@ -23,5 +23,15 @@
 .navbar{
     li{
     color: #eaeaea;
+    font-size: 18px;
     }
 }
+
+.pagination a {
+  border: 1px solid #ddd; /* Gray */
+  font-size: 22px
+}
+.pagination {
+  display: inline-block;
+}
+

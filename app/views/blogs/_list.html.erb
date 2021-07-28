@@ -6,24 +6,25 @@
       <%# end %>
       <div class="media-body">
         <h2 class="media-heading"><%= blog.title %></h2>
-          <p class="text-right"><%= blog.author.name %></p>
-          <p><h5><%= blog.content.html_safe %></h5></p>
-          <ul class="list-inline list-unstyled">
-            <li>
-              <span>
-                <%= link_to 'Show',blog, class: 'btn btn-primary'%>
-              </span>
-            </li>
+        <p class="text-right"><%= blog.author.name %></p>
+        <p><h5><%= blog.content.html_safe %></h5></p>
+        <ul class="list-inline list-unstyled">
+          <li>
+            <span>
+              <%= link_to 'Show',blog, class: 'btn btn-primary'%>
+            </span>
+          </li>
+          <li>|</li>
+          <li>
+            <span>
+              <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class:'btn btn-primary'%>        
+            </span>
+          </li>
             <li>|</li>
             <li>
-              <span>
-                <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class:'btn btn-primary'%>        
-              </span>
-              <li>|</li>
-              <li>
-                <span><i class="glyphicon glyphicon-comment"></i> <%= blog.comments.count%> comments</span>
-              </li>
-          </ul>
+              <span><i class="glyphicon glyphicon-comment"></i> <%= blog.comments.count%> comments</span>
+            </li>
+        </ul>
       </div>
     </div>
   </div>

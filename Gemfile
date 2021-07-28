@@ -32,6 +32,13 @@ gem 'trix-rails', require: 'trix'
 gem 'simple_form'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'autocomplete_rails'
+gem 'jquery-ui-rails'
+
+
+
 
 
 

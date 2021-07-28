@@ -1,6 +1,6 @@
 <nav class="navbar myNavbar">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar">
       <%= link_to 'My Blog', root_path, class: "navbar-brand" %>
     </div>
       <div class="navbar">
@@ -10,7 +10,7 @@
           <li><%= link_to "Edit Profile", edit_user_registration_path(current_user), remote:true %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>
         <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path, remote:true%></li>
+          <li><%= link_to "Sign up", new_user_registration_path, remote:true %></li>
           <li><%= link_to "Login", new_user_session_path, remote:true  %></li>
         <% end %>
       </div>

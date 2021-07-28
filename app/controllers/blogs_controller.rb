@@ -1,7 +1,12 @@
 class BlogsController < ApplicationController
+	autocomplete :blog, :title, :full => true
 
 	def index
-		@blogs= Blog.all
+		if params[:search]
+			@blogs= Blog.where("blogs.title LIKE ?", "%#{params[:search]}").paginate(page: params[:page], per_page: 2)	
+		else
+			@blogs= Blog.all.paginate(page: params[:page], per_page: 2)	
+		end
 	end
 
 	def new

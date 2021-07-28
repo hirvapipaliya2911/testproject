@@ -1,12 +1,28 @@
-<div class="container-fluid">
+<div class="container">
 	<h3 class="text-center">BLOG PAGE</h3>
 	<div class="container-fluid">
+		<div class="container-fluid">
+			<form action="<%= blogs_path %>">
+				<div id="searchComplete">
+		  		<input type="text" placeholder="Search blogs by title" name="search" style="width:20rem;" class="auto-suggestion" autocomplete="on">
+		  		<button type="submit">Search</button>
+		  	</div>
+		  </form>
+		</div>
+		<br>
 		<div class="jsBlogList">
 			<%= render partial: 'list', collection: @blogs, as: :blog %>
 		</div>
+		
 		<div id= "newBlogLink">
 			<%= link_to 'Add Blog', new_blog_path, remote:true, class:'btn btn-primary'%>
 		</div>
 		<div class= "new-form"></div>
 	</div>
+	<div class="pagination">
+		<%= will_paginate @blogs %>
+	</div>
 </div>
+<script>
+  initSuggestion()
+</script>
