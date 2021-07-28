@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class DeleteBlog
   attr :params, :blog_id, :blog
 

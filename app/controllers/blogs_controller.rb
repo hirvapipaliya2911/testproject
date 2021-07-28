@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   autocomplete :blog, :title, full: true
 
-  def index 
+  def index
     if params[:search]
       @blogs = Blog.where("blogs.title LIKE ?", "%#{params[:search]}").paginate(page: params[:page], per_page: 2)
     else
@@ -10,12 +10,12 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blog= Blog.new
+    @blog = Blog.new
     @blog.pictures.build
   end
 
   def create
-    @blog =Blog.new(blogs_params)
+    @blog = Blog.new(blogs_params)
     if @blog.save
       params[:pictures_attributes]['image'].each do |img|
         @blog.pictures.create(image: img)
