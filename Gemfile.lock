@@ -275,7 +275,7 @@ PLATFORMS
 
 DEPENDENCIES
   autocomplete_rails
-  bootsnap (>= 1.1.0)
+  bootsnap (>= 1.4.4)
   bootstrap
   byebug
   capybara (>= 2.15)
