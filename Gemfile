@@ -37,6 +37,7 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'autocomplete_rails'
 gem 'jquery-ui-rails'
+gem 'rack-timeout'
 
 
 
